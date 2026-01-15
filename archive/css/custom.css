@@ -1,0 +1,868 @@
+/* ============================================
+   STARTUP DAY 2026 - Pastel Creative Theme
+   ============================================ */
+
+/* CSS Variables */
+:root {
+    --lavender: #E8D5F2;
+    --mint: #B8E8D1;
+    --peach: #FFD5C8;
+    --coral: #FF8A80;
+    --sky-blue: #90CAF9;
+    --butter: #FFF59D;
+    --dark: #2D3436;
+    --dark-light: #636E72;
+    --white: #FFFFFF;
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 15px 50px rgba(0, 0, 0, 0.12);
+    --radius: 20px;
+    --radius-small: 12px;
+}
+
+/* Global Styles */
+.reveal {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: none;
+    letter-spacing: -0.02em;
+}
+
+.reveal p {
+    line-height: 1.6;
+}
+
+/* ============================================
+   ANIMATED BACKGROUND BLOBS
+   ============================================ */
+
+.blob-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50% 40% 60% 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: float 15s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 600px;
+    height: 600px;
+    background: rgba(232, 213, 242, 0.6);
+    top: -200px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: rgba(184, 232, 209, 0.6);
+    top: 50%;
+    right: -150px;
+    animation-delay: -5s;
+}
+
+.blob-3 {
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 213, 200, 0.6);
+    bottom: -100px;
+    left: 30%;
+    animation-delay: -10s;
+}
+
+.blob-4 {
+    width: 350px;
+    height: 350px;
+    background: rgba(144, 202, 249, 0.5);
+    top: 30%;
+    left: 10%;
+    animation-delay: -7s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) rotate(5deg) scale(1.05);
+    }
+    50% {
+        transform: translate(-20px, 20px) rotate(-5deg) scale(0.95);
+    }
+    75% {
+        transform: translate(20px, 10px) rotate(3deg) scale(1.02);
+    }
+}
+
+/* ============================================
+   TITLE SLIDE
+   ============================================ */
+
+.title-slide {
+    text-align: center;
+}
+
+.title-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: var(--coral);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-soft);
+}
+
+.main-title {
+    font-size: 4.5rem;
+    line-height: 1.2;
+    margin-bottom: 60px;
+}
+
+.gradient-text {
+    display: block;
+    background: linear-gradient(135deg, var(--coral) 0%, #9B59B6 50%, var(--sky-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.speaker-intro {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 50px;
+    border-radius: var(--radius);
+    display: inline-block;
+    box-shadow: var(--shadow-medium);
+}
+
+.speaker-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--dark);
+    margin: 0 0 5px 0;
+}
+
+.speaker-role {
+    font-size: 1.2rem;
+    color: var(--dark-light);
+    margin: 0;
+}
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+
+.section-title {
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 6px;
+    background: linear-gradient(90deg, var(--coral), var(--lavender));
+    border-radius: 3px;
+    margin: 20px auto 0;
+}
+
+/* ============================================
+   ABOUT ME - VENTURE CARDS
+   ============================================ */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.venture-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.venture-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-medium);
+}
+
+.venture-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--lavender), var(--mint));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--dark);
+    margin: 0 auto 20px;
+}
+
+.venture-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+}
+
+/* TetherAI logo */
+.tether-logo {
+    background: transparent;
+    padding: 10px;
+}
+
+/* Koddera logo - circular */
+.koddera-logo {
+    border-radius: 50%;
+}
+
+.venture-card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+.role-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--peach), var(--coral));
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+/* ============================================
+   JOURNEY SLIDE
+   ============================================ */
+
+.journey-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.big-quote {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--dark);
+    margin-bottom: 60px;
+    line-height: 1.4;
+}
+
+.big-quote em {
+    color: #7B2D8E;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.journey-stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 60px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--coral), #9B59B6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: var(--dark-light);
+    font-weight: 500;
+}
+
+/* ============================================
+   ADVICE SLIDES
+   ============================================ */
+
+.advice-slide {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advice-number {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(135deg, var(--coral), #9B59B6);
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.advice-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: var(--dark-light);
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+.advice-text {
+    font-size: 1.8rem;
+    color: var(--dark-light);
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Progress Comparison Visual */
+.progress-comparison {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.progress-bar span {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.progress-bar .bar {
+    height: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 100%;
+    border-radius: 15px;
+    transition: width 1s ease;
+}
+
+.progress-bar.waiting .fill {
+    background: linear-gradient(90deg, #ddd, #eee);
+}
+
+.progress-bar.starting .fill {
+    background: linear-gradient(90deg, var(--coral), #9B59B6, var(--sky-blue));
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.benefit-icon {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--dark);
+}
+
+/* Failure Cycle */
+.failure-cycle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cycle-step {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 40px;
+    border-radius: var(--radius);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.cycle-arrow {
+    font-size: 2rem;
+    color: var(--coral);
+}
+
+/* Co-founder Traits */
+.cofounder-traits {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.trait {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    min-width: 200px;
+}
+
+.trait-icon {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* Problem Approach */
+.problem-approach {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.approach {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    min-width: 300px;
+}
+
+.approach .label {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.approach.wrong .label {
+    background: rgba(255, 138, 128, 0.3);
+    color: #E74C3C;
+}
+
+.approach.right .label {
+    background: rgba(184, 232, 209, 0.5);
+    color: #27AE60;
+}
+
+.approach p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Tech Message */
+.tech-message {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tech-message .emphasis {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.tech-message .emphasis:last-child {
+    color: var(--coral);
+    font-weight: 600;
+}
+
+/* ============================================
+   STUDENT TIPS
+   ============================================ */
+
+.student-tips {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.tip-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--coral);
+    min-width: 50px;
+}
+
+.tip-content h3 {
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
+}
+
+.tip-content p {
+    font-size: 1.2rem;
+    color: var(--dark-light);
+    margin: 0;
+}
+
+/* ============================================
+   RESOURCES
+   ============================================ */
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.resource-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    text-align: left;
+}
+
+.resource-card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 15px 0;
+    color: var(--coral);
+}
+
+.resource-card p {
+    font-size: 1.2rem;
+    color: var(--dark-light);
+    margin: 0;
+}
+
+/* ============================================
+   THANK YOU SLIDE
+   ============================================ */
+
+.thank-you-slide {
+    text-align: center;
+}
+
+.thank-you-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.thank-you-text {
+    font-size: 6rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--coral), #9B59B6, var(--sky-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.closing-message {
+    font-size: 2rem;
+    color: var(--dark-light);
+    margin-bottom: 50px;
+}
+
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.social-links {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 50px;
+    border-radius: var(--radius);
+    display: inline-block;
+    box-shadow: var(--shadow-soft);
+}
+
+.connect-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 0 0 15px 0;
+}
+
+.links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.link-item {
+    background: linear-gradient(135deg, var(--lavender), var(--mint));
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.qa-prompt {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--coral);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* ============================================
+   CUSTOM PROGRESS BAR
+   ============================================ */
+
+.progress-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 100;
+}
+
+.progress-bar-custom {
+    height: 100%;
+    background: linear-gradient(90deg, var(--coral), #9B59B6, var(--sky-blue), var(--mint));
+    background-size: 300% 100%;
+    animation: gradient-shift 3s ease infinite;
+    transition: width 0.3s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger-In Animations (auto-plays when slide enters) */
+.stagger-in {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal .slides section.present .stagger-in {
+    animation: staggerFadeIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Stagger delays */
+.stagger-in[data-delay="0"] { animation-delay: 0.1s; }
+.stagger-in[data-delay="1"] { animation-delay: 0.25s; }
+.stagger-in[data-delay="2"] { animation-delay: 0.4s; }
+.stagger-in[data-delay="3"] { animation-delay: 0.55s; }
+.stagger-in[data-delay="4"] { animation-delay: 0.7s; }
+
+@keyframes staggerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   REVEAL.JS OVERRIDES
+   ============================================ */
+
+.reveal .controls {
+    color: var(--coral);
+}
+
+.reveal .controls button {
+    color: var(--coral);
+}
+
+.reveal .slide-number {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-title {
+        font-size: 3.5rem;
+    }
+
+    .advice-title {
+        font-size: 2.8rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .advice-title {
+        font-size: 2.2rem;
+    }
+
+    .journey-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .failure-cycle {
+        flex-direction: column;
+    }
+
+    .cofounder-traits {
+        flex-direction: column;
+    }
+
+    .problem-approach {
+        flex-direction: column;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thank-you-text {
+        font-size: 4rem;
+    }
+}
